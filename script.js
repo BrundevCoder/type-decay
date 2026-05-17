@@ -10,16 +10,28 @@ const fontNames = [
   '""Trebuchet MS""', "Helvetica", '"Lucida Console"',
   "Fantasy", "Georgia"
 ];
-const fontColors = [
-  "#000", "#333"
-];
+
+function randomHexColor() {
+  let color = "#";
+
+  const hex = [
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
+    "a", "b", "c", "d", "e", "f"
+  ];
+
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * hex.length)];
+  }
+
+  return color
+}
 
 function randomFontConfig() {
   let data = {"Name": "Syne", "Weight": 100, "Color": "#000"};
 
   data["Name"] = fontNames[Math.floor(Math.random() * fontNames.length)];
   data["Weight"] = fontWeights[Math.floor(Math.random() * fontWeights.length)];
-  data["Color"] = fontColors[Math.floor(Math.random() * fontColors.length)];
+  data["Color"] = randomHexColor();
 
   return data;
 }
@@ -30,6 +42,8 @@ function update() {
   display.style.fontFamily = fontData["Name"];
   display.style.fontWeight = fontData["Weight"];
   display.style.color = fontData["Color"];
+
+  display.innerText = textInput.value;
 
 }
 
