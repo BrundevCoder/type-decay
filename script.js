@@ -33,7 +33,7 @@ function randomFontConfig() {
   data["Name"] = fontNames[Math.floor(Math.random() * fontNames.length)];
   data["Weight"] = fontWeights[Math.floor(Math.random() * fontWeights.length)];
   data["Color"] = randomHexColor();
-  data["Shadow"] = Math.floor(Math.random() * 5) === 1 ? "0 5px 30px" : "0px";
+  data["Shadow"] = Math.floor(Math.random() * 5) === 1 ? "0 5px 30px" : "0px 0px 0px";
 
   return data;
 }
