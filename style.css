@@ -35,8 +35,8 @@ h1 {
   font-family: "Syne";
   color: #46f3ce;
   font-weight: 800;
-  transition: color 225ms ease;
   word-break: break-all;
+  transition: color 225ms ease;
 }
 
 #ipt {
@@ -47,6 +47,9 @@ h1 {
   border: 2.5px solid #46f3ce;
   border-radius: 8px;
   padding: .25rem;
+  color: #ada;
+  outline: none;
+  box-shadow: 0 5px 0 #46f3ce;
 }
 
 @media (max-width: 470px) {

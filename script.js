@@ -28,11 +28,12 @@ function randomHexColor() {
 }
 
 function randomFontConfig() {
-  let data = {"Name": "Syne", "Weight": 100, "Color": "#000"};
+  let data = {"Name": "Syne", "Weight": 100, "Color": "#000", "Shadow": ""};
 
   data["Name"] = fontNames[Math.floor(Math.random() * fontNames.length)];
   data["Weight"] = fontWeights[Math.floor(Math.random() * fontWeights.length)];
   data["Color"] = randomHexColor();
+  data["Shadow"] = Math.floor(Math.random() * 5) === 1 ? "0 5px 30px" : "0px";
 
   return data;
 }
@@ -43,9 +44,9 @@ function update() {
   display.style.fontFamily = fontData["Name"];
   display.style.fontWeight = fontData["Weight"];
   display.style.color = fontData["Color"];
+  display.style.textShadow = fontData["Shadow"];
 
   display.innerText = textInput.value;
-
 }
 
 textInput.addEventListener("input", () => {
