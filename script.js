@@ -8,7 +8,8 @@ const fontNames = [
   '"Outfit"', "system-ui", "Impact",
   "cursive", "Cambria", '"Courier New"',
   '""Trebuchet MS""', "Helvetica", '"Lucida Console"',
-  "Fantasy", "Georgia"
+  "Fantasy", "Georgia", "Tahoma", 
+  '"Franklin Gothic Medium"', '"Trebuchet MS"', '"Segoe UI"'
 ];
 
 function randomHexColor() {
@@ -23,7 +24,7 @@ function randomHexColor() {
     color += hex[Math.floor(Math.random() * hex.length)];
   }
 
-  return color
+  return color;
 }
 
 function randomFontConfig() {
@@ -48,5 +49,16 @@ function update() {
 }
 
 textInput.addEventListener("input", () => {
-  update()
+
+  if (textInput.value.length > 200) {
+    alert("No More than 200 chars!");
+    return;
+  }
+
+  if (textInput.value === "" || textInput.value == " ") {
+    display.innerText = "Hey! Empty text can't be rendered! :<";
+    return;
+  }
+
+  update();
 });

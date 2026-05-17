@@ -1,7 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #111;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 550px;
+  
+}
+
+.text-container {
+  padding: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+}
+
 h1 {
+  text-align: justify;
   font-family: "Syne";
   color: #46f3ce;
   font-weight: 800;
+  transition: color 225ms ease;
+  word-break: break-all;
+}
+
+#ipt {
+  font-family: "Outfit";
+  font-weight: 600;
+  font-size: 2rem;
+  background: #444;
+  border: 2.5px solid #46f3ce;
+  border-radius: 8px;
+  padding: .25rem;
+}
+
+@media (max-width: 470px) {
+  #ipt {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 310px) {
+  #ipt {
+    width: 80%;
+  }
 }
