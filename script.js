@@ -8,7 +8,7 @@ const fontNames = [
   '"Syne"', "monospace", "Verdana",
   '"Outfit"', "system-ui", "Impact",
   "cursive", "Cambria", '"Courier New"',
-  '""Trebuchet MS""', "Helvetica", '"Lucida Console"',
+  '"Trebuchet MS"', "Helvetica", '"Lucida Console"',
   "Fantasy", "Georgia", "Tahoma", 
   '"Franklin Gothic Medium"', '"Trebuchet MS"', '"Segoe UI"'
 ];
