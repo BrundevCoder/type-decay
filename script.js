@@ -2,6 +2,7 @@ const display = document.getElementById("textDisplay");
 const textInput = document.getElementById("ipt");
 
 const fontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+const fontStyle = ["normal", "italic", "oblique"];
 const fontNames = [
   "sans-serif", "serif", "Arial",
   '"Syne"', "monospace", "Verdana",
@@ -28,12 +29,13 @@ function randomHexColor() {
 }
 
 function randomFontConfig() {
-  let data = {"Name": "Syne", "Weight": 100, "Color": "#000", "Shadow": ""};
+  let data = {"Name": "Syne", "Weight": 100, "Color": "#000", "Shadow": "", "Style": "normal"};
 
   data["Name"] = fontNames[Math.floor(Math.random() * fontNames.length)];
   data["Weight"] = fontWeights[Math.floor(Math.random() * fontWeights.length)];
   data["Color"] = randomHexColor();
   data["Shadow"] = Math.floor(Math.random() * 5) === 1 ? "0 5px 30px" : "0px 0px 0px";
+  data["Style"] = fontStyle[Math.floor(Math.random() * fontStyle.length)];
 
   return data;
 }
@@ -45,6 +47,7 @@ function update() {
   display.style.fontWeight = fontData["Weight"];
   display.style.color = fontData["Color"];
   display.style.textShadow = fontData["Shadow"];
+  display.style.fontStyle = fontData["Style"];
 
   display.innerText = textInput.value;
 }
